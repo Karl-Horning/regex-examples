@@ -1,8 +1,8 @@
 # RegEx Examples
 
-## *A useful collection of regular expressions*
+*A useful collection of regular expressions*
 
-### Replace the last n characters of a string
+## Replace the last n characters of a string
 
 To replace the last *n* characters of a string, use `.{n}$`
 
