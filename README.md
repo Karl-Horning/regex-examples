@@ -2,8 +2,6 @@
 
 ## *A useful collection of regular expressions*
 
----
-
 ### Replace the last n characters of a string
 
 To replace the last *n* characters of a string, use `.{n}$`
