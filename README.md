@@ -6,7 +6,7 @@ Regular expressions, commonly known as RegEx, are powerful tools for pattern mat
 
 ### General
 
-A regular expression is enclosed within slashes (`/.../`). Flags can be added to modify the search behavior. For instance, `/pattern/gi` indicates a global search with case insensitivity.
+A regular expression is enclosed within slashes (`/.../`). Flags can be added to modify the search behaviour. For instance, `/pattern/gi` indicates a global search with case insensitivity.
 
 ### Flags
 
@@ -40,11 +40,66 @@ A regular expression is enclosed within slashes (`/.../`). Flags can be added to
 
 ### Single Character Metacharacters
 
-*To be added*
+Here are some commonly used single character metacharacters:
+
+1. **`.` (Dot):** Matches any single character except for line terminators.
+   - Example: `/a.c/` matches "abc," "adc," etc.
+
+2. **`\d`:** Matches any digit (0-9).
+   - Example: `/a\dc/` matches "a1c," "a2c," etc.
+
+3. **`\D`:** Matches any non-digit.
+   - Example: `/a\Dc/` matches "abc," "a#c," etc.
+
+4. **`\w`:** Matches any word character (alphanumeric + underscore).
+   - Example: `/a\wc/` matches "a1c," "a_c," etc.
+
+5. **`\W`:** Matches any non-word character.
+   - Example: `/a\Wc/` matches "a#c," "a$c," etc.
+
+6. **`\s`:** Matches any whitespace character (space, tab, line feed).
+   - Example: `/a\sc/` matches "a c," "a\tc," etc.
+
+7. **`\S`:** Matches any non-whitespace character.
+   - Example: `/a\Sc/` matches "a#c," "a$c," etc.
+
+8. **`[...]`:** Character class. Matches any single character within the brackets.
+   - Example: `/gr[aeiou]p/` matches "grape," "grip," etc.
+
+9. **`[^...]`:** Negated character class. Matches any single character not within the brackets.
+   - Example: `/gr[^aeiou]p/` matches "grip" but not "grape."
+
+These metacharacters provide flexibility in specifying patterns for single characters in regular expressions. You can mix and match them to create complex patterns based on your requirements.
 
 ### Double Character Metacharacters
 
-*To be added*
+These combinations enable you to express more complex patterns in regular expressions. Here are some commonly used double character metacharacters:
+
+1. **`*`:** Matches zero or more occurrences of the preceding character or group.
+   - Example: `/ab*c/` matches "ac," "abc," "abbc," etc.
+
+2. **`+`:** Matches one or more occurrences of the preceding character or group.
+   - Example: `/ab+c/` matches "abc," "abbc," etc., but not "ac."
+
+3. **`?`:** Matches zero or one occurrence of the preceding character or group.
+   - Example: `/ab?c/` matches "ac" and "abc."
+
+4. **`{n}`:** Matches exactly n occurrences of the preceding character or group.
+   - Example: `/ab{2}c/` matches "abbc" but not "abc" or "ac."
+
+5. **`{n,}`:** Matches n or more occurrences of the preceding character or group.
+   - Example: `/ab{2,}c/` matches "abbc," "abbbc," etc.
+
+6. **`{n,m}`:** Matches between n and m occurrences of the preceding character or group.
+   - Example: `/ab{2,4}c/` matches "abbc," "abbbc," and "abbbbc" but not "abc" or "ac."
+
+7. **`|`:** Alternation. Matches either the pattern on the left or the pattern on the right.
+   - Example: `/cat|dog/` matches "cat" or "dog."
+
+8. **`(...)`:** Capturing group. Groups patterns together and captures the matched result.
+   - Example: `/(ab)+c/` matches "abc" and "ababc."
+
+These double character metacharacters provide ways to specify the quantity and alternation of characters or groups within a regular expression. They add expressive power to regex patterns, allowing for more sophisticated matching conditions.
 
 ## Useful Examples
 
